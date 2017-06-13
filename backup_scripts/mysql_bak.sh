@@ -15,16 +15,15 @@ if [ ! -d "$bak_folder" ]; then
 	mkdir -p "$bak_folder"
 fi
 
-# These quantities are username & password of mysql/mariadb.
-# If you want to use this script, you should modify the username & password.
-user="user"
-password="passwd"
-
 # Command excuted
 # Mark a date to the log.
 # You shoulde modify database before using it.
-echo -e "$(date)\n" >>$bak_folder/$log_error
-mysqldump -u "$user" -p "password" database > $bak_folder/$sql_file 1>/dev/null 2>>$bakfolder/$log_error
+# You can change the executing logic as you wish, this is just a example. It cannot be used for working.
+# You shoule input the user name & password by ypurself, so this is not suitable for automatical action.
+echo -e "$(date)\n" >>$bak_folder/$log_error 
+read -p "Please input your user name: " -t 15 user
+read -p "Please input your password: " -t 15 password
+mysqldump -u "$user" -p "$password" database > $bak_folder/$sql_file 1>/dev/null 2>>$bakfolder/$log_error
 
 # Warning!
 # This scripts could disclose your database password, so my advice is you should avoid to use it.
