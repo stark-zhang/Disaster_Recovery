@@ -12,8 +12,6 @@ This system is based on bash.
 
 4. Following are my plans:
 - [x] backup som important files & folders
-- [ ] Run a check to check the Performance of your servers or vitrual machines
-- [x] Create a trash bin on the linux
 - [x] ~~*etc...*~~~
 
 5. Some help of Permissions...
